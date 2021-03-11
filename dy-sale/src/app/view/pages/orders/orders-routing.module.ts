@@ -1,20 +1,32 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { OrdersComponent } from './component/orders.component';
+import { OrderCreateComponent } from './fragment/order-create/order-create.component';
+import { OrderListComponent } from './fragment/order-list/order-list.component';
+import { OrderViewComponent } from './fragment/order-view/order-view.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: OrdersComponent
+    component: OrdersComponent,
+    children: [
+      { 
+        path: 'view/:id',
+        component: OrderViewComponent },
+      {
+        path: 'list',
+        component: OrderListComponent,
+      },
+      {
+        path: 'create',
+        component: OrderCreateComponent,
+      },
+    ],
   },
-  {
-    path: ':id',
-    component: OrdersComponent
-  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class OrdersRoutingModule { }
+export class OrdersRoutingModule {}
