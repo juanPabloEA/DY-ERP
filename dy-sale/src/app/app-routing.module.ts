@@ -10,6 +10,16 @@ const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       { path: "", redirectTo: "/authentication/signin", pathMatch: "full" },
+      {
+        path: "orders",
+        loadChildren: () =>
+          import("./view/pages/orders/orders.module").then((m) => m.OrdersModule),
+      },
+      {
+        path: "products",
+        loadChildren: () =>
+          import("./view/pages/products/products.module").then((m) => m.ProductsModule),
+      }
     ],
   },
   {

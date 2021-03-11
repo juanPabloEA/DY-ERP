@@ -12,6 +12,7 @@ import { SiginComponent } from './core/authentication/sigin/sigin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
+import { OrdersRoutingModule } from './view/pages/orders/orders-routing.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AngularFireModule } from '@angular/fire';
     BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
-    MaterialUiModule
+    MaterialUiModule,
+    OrdersRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
