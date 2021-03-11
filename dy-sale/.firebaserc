@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "dy-app-184d4": {
+      "hosting": {
+        "dy-sale": [
+          "dy-app-184d4"
+        ]
+      }
+    }
+  }
+}

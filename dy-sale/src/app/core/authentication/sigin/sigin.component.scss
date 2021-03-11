@@ -1,22 +1,22 @@
-.grid-container {
-  display: grid;
-  grid-template-columns: 0.3fr 1.7fr 1.7fr 0.3fr;
-  grid-template-rows: 0.3fr 1.7fr 1.7fr 0.3fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    ". . . ."
-    ". login login ."
-    ". login login ."
-    ". . . .";
-    height: 100%;
-}
-.login { 
-  grid-area: login;
-}
-/* .example-card {
-  background-color: rgba(255, 287, 204, 0.2);
-} 
- */
-.example-full-width {
-  width: 100%;
+ @media only screen and (max-width: 375px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 0.3fr 1.7fr 1.7fr 0.3fr;
+    grid-template-rows: 0.3fr 1.7fr 1.7fr 0.3fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      ". . . ."
+      ". login login ."
+      ". login login ."
+      ". . . .";
+      height: 100%;
+  }
+  
+  .login { 
+    grid-area: login;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
 }

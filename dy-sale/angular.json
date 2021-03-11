@@ -123,6 +123,10 @@
               "devServerTarget": "dy-sale:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }
