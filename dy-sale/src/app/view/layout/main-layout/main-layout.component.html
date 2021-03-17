@@ -1,19 +1,22 @@
 <p>
     <mat-toolbar color="primary">
+      <button mat-icon-button routerLink="/orders/list" aria-label="Example icon-button with a menu">
+        <mat-icon>home</mat-icon>
+      </button>
+      <span class="example-spacer"></span>
       <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item>
+        <button mat-menu-item routerLink="/orders/list" routerLinkActive="active">
           <mat-icon>pending_actions</mat-icon>
           <span>Pedidos</span>
         </button>
-        <button mat-menu-item >
+        <button mat-menu-item routerLink="/products" routerLinkActive="active">
           <mat-icon>shopping_cart</mat-icon>
           <span>Productos</span>
         </button>
       </mat-menu>
-      <span>Delcicias de la yoya</span>
     </mat-toolbar>
 </p>
 <router-outlet></router-outlet>

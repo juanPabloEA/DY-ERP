@@ -13,6 +13,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { OrdersRoutingModule } from './view/pages/orders/orders-routing.module';
+import { NumbersPipe } from './core/util/pipe/numbers.pipe';
+import { UtilModule } from './core/util/util.module';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -30,9 +33,12 @@ import { OrdersRoutingModule } from './view/pages/orders/orders-routing.module';
     BrowserModule,
     AppRoutingModule,
     MaterialUiModule,
-    OrdersRoutingModule
+    OrdersRoutingModule,
+    UtilModule
   ],
-  providers: [],
+  providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'es-ES'},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

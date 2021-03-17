@@ -5,7 +5,7 @@
       grid-template-rows: 0.3fr 1.7fr 1.7fr 0.3fr;
       gap: 0px 0px;
       grid-template-areas:
-        ". order-header order-header ."
+        ". orders orders ."
         ". orders orders ."
         ". orders orders ."
         ". . . .";
@@ -13,9 +13,6 @@
     }
     .orders { 
         grid-area: orders;
-    }
-    .order-header {
-        grid-area: order-header;
     }
 
     .example-full-width {
@@ -30,4 +27,11 @@
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
+    font-size: 50px;
   }
+  .add_circle_home {
+    cursor: pointer; 
+    color: green;
+    font-size: 50px;
+  }
+  

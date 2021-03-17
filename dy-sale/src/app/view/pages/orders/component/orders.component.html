@@ -1,14 +1,11 @@
 <div class="grid-container">
-    <div class="order-header">
-        <h2>Pedidos</h2>
-    </div>
     <div class="orders">
         <router-outlet></router-outlet>
     </div>
 </div>
 <div class="container">
     <div class="btn-holder">
-        <button mat-fab color="primary">
+        <button mat-fab color="primary" [disabled]="true" routerLink="/orders/create">
             <mat-icon>add</mat-icon>
         </button>
     </div>

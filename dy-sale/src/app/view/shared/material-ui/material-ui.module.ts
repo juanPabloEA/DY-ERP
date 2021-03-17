@@ -9,6 +9,11 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDatepickerModule} from '@angular/material/datepicker'; 
+import { MatNativeDateModule } from '@angular/material/core';
+import { NgxMatDatetimePickerModule, NgxMatTimepickerModule,  NgxMatNativeDateModule} from '@angular-material-components/datetime-picker';
 
 @NgModule({
   imports: [
@@ -22,7 +27,14 @@ import {MatTableModule} from '@angular/material/table';
     MatToolbarModule,
     MatListModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatDividerModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    NgxMatDatetimePickerModule,
+    NgxMatTimepickerModule,
+    NgxMatNativeDateModule
   ],
   exports: [
     MatCardModule,
@@ -35,7 +47,14 @@ import {MatTableModule} from '@angular/material/table';
     MatToolbarModule,
     MatListModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatDividerModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    NgxMatDatetimePickerModule,
+    NgxMatTimepickerModule,
+    NgxMatNativeDateModule
   ],
 })
 export class MaterialUiModule {}
