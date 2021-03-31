@@ -16,6 +16,8 @@ export interface Transaction {
 })
 export class OrderCreateComponent implements OnInit {
   orderForm: FormGroup;
+  addProduct: FormGroup;
+  productList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
 
   constructor() {
   }
@@ -28,8 +30,13 @@ export class OrderCreateComponent implements OnInit {
       direction: new FormControl('', Validators.required),
       description: new FormControl(''),
       message: new FormControl(''),
-      products: new FormControl('', Validators.required)
+      products: new FormControl([], Validators.required)
     });
+    this.addProduct = new FormGroup({
+      product: new FormControl(''),
+      count: new FormControl(0),
+      price: new FormControl(0)
+    })
   }
 
   displayedColumns: string[] = ['item', 'quantity','cost', 'action'];
@@ -45,6 +52,10 @@ export class OrderCreateComponent implements OnInit {
   /** Gets the total cost of all transactions. */
   getTotalCost() {
     return this.transactions.map(t => t.cost).reduce((acc, value) => acc + value, 0);
+  }
+
+  showResult() {
+    console.log('Hello world!!');
   }
 
 }

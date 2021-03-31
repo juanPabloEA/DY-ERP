@@ -1,8 +1,8 @@
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 1px) {
     .grid-container {
       display: grid;
-      grid-template-columns: 0.3fr 1.7fr 1.7fr 0.3fr;
-      grid-template-rows: 0.3fr 1.7fr 1.7fr 0.3fr;
+      grid-template-columns: 0.1fr 1.9fr 1.9fr 0.1fr;
+      grid-template-rows: 0.1fr 1.9fr 1.9fr 0.1fr;
       gap: 0px 0px;
       grid-template-areas:
         ". orders orders ."

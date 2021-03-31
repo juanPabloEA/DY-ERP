@@ -14,6 +14,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker'; 
 import { MatNativeDateModule } from '@angular/material/core';
 import { NgxMatDatetimePickerModule, NgxMatTimepickerModule,  NgxMatNativeDateModule} from '@angular-material-components/datetime-picker';
+import { MatSelectModule } from '@angular/material/select';
+import { MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
   imports: [
@@ -27,6 +29,7 @@ import { NgxMatDatetimePickerModule, NgxMatTimepickerModule,  NgxMatNativeDateMo
     MatToolbarModule,
     MatListModule,
     MatIconModule,
+    MatSelectModule,
     MatTableModule,
     MatDividerModule,
     MatFormFieldModule,
@@ -34,11 +37,13 @@ import { NgxMatDatetimePickerModule, NgxMatTimepickerModule,  NgxMatNativeDateMo
     MatNativeDateModule,
     NgxMatDatetimePickerModule,
     NgxMatTimepickerModule,
-    NgxMatNativeDateModule
+    NgxMatNativeDateModule,
+    MatStepperModule
   ],
   exports: [
     MatCardModule,
     MatButtonModule,
+    MatSelectModule,
     MatGridListModule,
     MatMenuModule,
     MatIconModule,
@@ -54,7 +59,8 @@ import { NgxMatDatetimePickerModule, NgxMatTimepickerModule,  NgxMatNativeDateMo
     MatNativeDateModule,
     NgxMatDatetimePickerModule,
     NgxMatTimepickerModule,
-    NgxMatNativeDateModule
+    NgxMatNativeDateModule,
+    MatStepperModule
   ],
 })
 export class MaterialUiModule {}

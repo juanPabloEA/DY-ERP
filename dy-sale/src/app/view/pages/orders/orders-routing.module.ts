@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { OrdersComponent } from './component/orders.component';
-import { OrderCreateComponent } from './fragment/order-create/order-create.component';
-import { OrderListComponent } from './fragment/order-list/order-list.component';
-import { OrderViewComponent } from './fragment/order-view/order-view.component';
+import { OrderCreateComponent } from './fragments/order-create/order-create.component';
+import { OrderListComponent } from './fragments/order-list/order-list.component';
+import { OrderViewComponent } from './fragments/order-view/order-view.component';
 
 const routes: Routes = [
   {
