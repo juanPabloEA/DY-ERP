@@ -1,0 +1,37 @@
+@media only screen and (max-width: 1px) {
+    .grid-container {
+      display: grid;
+      grid-template-columns: 0.1fr 1.9fr 1.9fr 0.1fr;
+      grid-template-rows: 0.1fr 1.9fr 1.9fr 0.1fr;
+      gap: 0px 0px;
+      grid-template-areas:
+        ". orders orders ."
+        ". orders orders ."
+        ". orders orders ."
+        ". . . .";
+        height: 100%;
+    }
+    .orders { 
+        grid-area: orders;
+    }
+
+    .example-full-width {
+      width: 100%;
+    }
+  }
+  .container .btn-holder {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    font-size: 50px;
+  }
+  .add_circle_home {
+    cursor: pointer; 
+    color: green;
+    font-size: 50px;
+  }
+  

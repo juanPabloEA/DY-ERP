@@ -1,0 +1,18 @@
+<form [formGroup]="productForm">
+    <h1 mat-dialog-title>{{data.type}} Product</h1>
+    <div mat-dialog-content>
+    <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Precio</mat-label>
+        <input matInput type="number" formControlName="cost">
+    </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+    <button mat-button >No Thanks</button>
+    <button mat-button [mat-dialog-close]="productForm" cdkFocusInitial>Ok</button>
+    </div>
+
+</form>

@@ -16,6 +16,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { NgxMatDatetimePickerModule, NgxMatTimepickerModule,  NgxMatNativeDateModule} from '@angular-material-components/datetime-picker';
 import { MatSelectModule } from '@angular/material/select';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   imports: [
@@ -32,6 +33,7 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatSelectModule,
     MatTableModule,
     MatDividerModule,
+    MatDialogModule,
     MatFormFieldModule,
     MatDatepickerModule,
     MatNativeDateModule,
@@ -46,6 +48,7 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatSelectModule,
     MatGridListModule,
     MatMenuModule,
+    MatDialogModule,
     MatIconModule,
     MatInputModule,
     MatProgressBarModule,

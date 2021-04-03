@@ -28,7 +28,6 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
     BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,

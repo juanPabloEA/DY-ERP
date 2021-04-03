@@ -1,1 +1,12 @@
-<p>products works!</p>
+<div class="grid-container">
+    <div class="orders">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+<div class="container">
+    <div class="btn-holder">
+        <button mat-fab color="primary" [disabled]="false" routerLink="/orders/create">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+</div>
