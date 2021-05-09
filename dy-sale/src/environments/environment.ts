@@ -4,6 +4,9 @@
 
 export const environment = {
   production: false,
+  api: {
+    login: "https://reqbin.com/echo/get/json"
+  }
 };
 
 /*

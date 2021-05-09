@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { User } from '../../redux/login/User';
+import {login} from '../../redux/login/login-page.actions';
+import { LOGIN } from '../../redux/login/login.constants';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -15,6 +20,8 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./sigin.component.scss']
 })
 export class SiginComponent implements OnInit {
+  
+  status$: Observable<boolean>;
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
@@ -26,9 +33,20 @@ export class SiginComponent implements OnInit {
 
   matcher = new MyErrorStateMatcher();
 
-  constructor() { }
+  constructor(private login: Store<{login: boolean}> ) { 
+    this.status$ = login.select(LOGIN);
+   }
 
   ngOnInit(): void {
+  }
+
+  loginSubmit() {
+    let user = {
+      username: this.emailFormControl.value,
+      password: this.passwordFormControl.value
+    } as User;
+
+    this.login.dispatch(login(user));
   }
 
 }

@@ -11,7 +11,6 @@ export class NumbersPipe implements PipeTransform {
         .toFixed(0) // always two decimal digits
         .replace('.', ',') // replace decimal point character with ,
         .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
-    ) 
+    )
   }
-
 }

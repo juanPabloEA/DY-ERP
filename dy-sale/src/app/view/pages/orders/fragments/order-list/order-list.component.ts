@@ -1,6 +1,9 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import * as moment from 'moment';
+import { Observable } from 'rxjs';
+import { increment, decrement, reset } from 'src/app/core/redux/orders/orders.actions';
 
 @Component({
   selector: 'app-order-list',
@@ -18,8 +21,10 @@ export class OrderListComponent implements OnInit {
   public dataSource;
   public displayedColumns;
   public expandedElement: PeriodicElementOLD | null;
-
-  constructor() { 
+  count$: Observable<number>;
+  status$: Observable<number>;
+  constructor(private store: Store<{ orders: number }>) { 
+    this.count$ = store.select('orders');
     this.dataSource = ELEMENT_DATA_OLD;
     this.displayedColumns =  ['name', 'date', 'delivery', 'info'];
   }
@@ -27,6 +32,18 @@ export class OrderListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+   
+  increment() {
+    this.store.dispatch(increment());
+  }
+ 
+  decrement() {
+    this.store.dispatch(decrement());
+  }
+ 
+  reset() {
+    this.store.dispatch(reset());
+  }
 }
 export interface PeriodicElementOLD {
   name: string;

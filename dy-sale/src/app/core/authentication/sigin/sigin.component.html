@@ -29,8 +29,10 @@
                   
             </mat-card-content>
             <mat-card-actions>
-                <button mat-raised-button color="primary">Ingresar</button>
+                <button (click)="loginSubmit()" mat-raised-button color="primary">Ingresar</button>
             </mat-card-actions>
+            <div>Current status: {{ status$ | async }}</div>
         </mat-card>
     </div>
   </div>
+  
