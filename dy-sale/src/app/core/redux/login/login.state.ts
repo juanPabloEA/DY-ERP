@@ -9,7 +9,8 @@ export interface LoginState {
 export const initialState: LoginState = {   
     user: {
         name: '',
-        rols: []
+        roles: [],
+        proyects: []
     },
     state: false,
     apiKey: ''

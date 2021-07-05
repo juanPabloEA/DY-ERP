@@ -1,4 +1,5 @@
 export interface User {
     name: String;
-    rols: String[];
+    roles: String[];
+    proyects: String[];
 }

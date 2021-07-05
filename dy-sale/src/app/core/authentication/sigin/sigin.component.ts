@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { User } from '../../redux/login/User';
-import {login} from '../../redux/login/login-page.actions';
+import { UserPayload } from '../../redux/login/UserPayload';
 import { LOGIN } from '../../redux/login/login.constants';
+import * as LoginActions from '../../redux/login/login-page.actions';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -22,14 +22,10 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class SiginComponent implements OnInit {
   
   status$: Observable<boolean>;
-  emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]);
-
-  passwordFormControl = new FormControl('', [
-    Validators.required
-  ]);
+  userPayload = new FormGroup({
+    username:  new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required])
+  });
 
   matcher = new MyErrorStateMatcher();
 
@@ -42,11 +38,19 @@ export class SiginComponent implements OnInit {
 
   loginSubmit() {
     let user = {
-      username: this.emailFormControl.value,
-      password: this.passwordFormControl.value
-    } as User;
+      username: this.username.value,
+      password: this.password.value
+    } as UserPayload;
 
-    this.login.dispatch(login(user));
+    this.login.dispatch(new LoginActions.GetLogin(user));
+  }
+
+  get username() {
+    return this.userPayload.get('username');
+  }
+
+  get password() {
+    return this.userPayload.get('password');
   }
 
 }
